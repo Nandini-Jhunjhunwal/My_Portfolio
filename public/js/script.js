@@ -1,9 +1,22 @@
-// MENU TOGGLE
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+const navLinks = document.querySelector('.nav-links');
+const menuToggle = document.querySelector('.menu-toggle');
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+// Toggle menu on hamburger click
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+// Close menu if clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
 });
 
 // THEME TOGGLE (with slider switch)
@@ -64,3 +77,6 @@ themeSwitch.addEventListener('change', () => {
 
   updateTextColor();
 });
+
+
+
