@@ -1,0 +1,724 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* same or slightly bigger than navbar height */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  padding-top: 50px; 
+  
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;          /* ✅ fixed at top */
+  top: 0;
+  left: 0;
+  width: 100%;              /* full width */
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #222;
+  align-items: center;
+  z-index: 1000;            /* stays above everything */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.hero-text span {
+  display: block;
+  font-weight: bold;
+}
+
+.hero-text p {
+  margin: 1rem 0;
+  max-width: 400px;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px/* added rounded corners */
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+footer {
+  text-align: right;
+  padding: 1rem 3rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Introduction Section */
+.intro-section {
+  background: #1d1d1d; /* dark background like your screenshot */
+  color: #fff;
+  padding: 60px 10%;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Left Text */
+.intro-text {
+  flex: 1 1 50%;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.intro-text h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #fff;
+  margin-top: 8px;
+}
+
+.intro-text p {
+  margin: 15px 0 25px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* About Boxes */
+.about-sections {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  flex: 1;
+}
+
+.about-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.about-box p {
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Right Image */
+.intro-image {
+  flex: 1 1 40%;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text h1::after {
+    margin: 8px auto 0;
+  }
+
+  .about-sections {
+    justify-content: center;
+  }
+
+  .intro-image img {
+    margin-top: 20px;
+  }
+}
+/* About Section */
+.about-section {
+  background: #1d1d1d;
+  color: #fff;
+  padding: 60px 10%;
+}
+
+.about-images {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.about-images img {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  max-height: 250px;
+}
+
+.about-content {
+  text-align: left;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+  background: #fff;
+  margin: 10px 0 25px;
+}
+
+.about-boxes {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.about-box p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-images {
+    flex-direction: column;
+  }
+
+  .about-boxes {
+    flex-direction: column;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .underline {
+    margin: 10px auto 25px;
+  }
+}
+
+.mission-item a {
+  color: #fff;              /* make links white */
+  text-decoration: none;    /* remove underline */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.mission-item a {
+  color: #ffffff !important;   /* Always white */
+  text-decoration: none;
+}
+
+.mission-item a:visited,
+.mission-item a:hover,
+.mission-item a:active {
+  color: #ffffff !important;   /* Stays white for all states */
+  text-decoration: none;
+}
+
+
+.mission-item a:hover {
+  color: #bbb;              /* light gray on hover */
+  text-decoration: underline; /* underline only when hovered */
+}
+/* My Mission Section */
+.mission-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 10%;   /* more breathing space */
+  background: #111;
+  color: white;
+  gap: 60px;           /* larger gap between text and images */
+}
+
+.mission-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mission-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;   /* more spacing between items */
+}
+
+.mission-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mission-item h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.mission-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 500px;
+}
+
+.mission-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  min-width: 300px;
+}
+
+.mission-images img {
+  width: 100%;
+  height: 220px;       /* fixed uniform height */
+  border-radius: 10px;
+  object-fit: cover;   /* ensures images scale nicely */
+  transition: transform 0.3s ease;
+}
+
+.mission-images img:hover {
+  transform: scale(1.05); /* subtle zoom effect */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mission-section {
+    flex-direction: column;
+    padding: 60px 5%;
+  }
+
+  .mission-images {
+    grid-template-columns: 1fr; /* stack images in single column */
+  }
+
+  .mission-images img {
+    height: 200px;
+  }
+}
+/* Contact Section */
+.contact-section {
+  width: 100%;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh; /* Full screen height */
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+  height: 100%; /* Full height of container */
+  display: flex;
+  justify-content: center; /* ✅ center image horizontally */
+  align-items: center;     /* ✅ center image vertically */
+  padding: 20px;           /* ✅ adds spacing inside */
+}
+
+.contact-image img {
+  width: 80%;   /* slightly smaller to create margin */
+  height: 100%;
+  object-fit: cover; /* ✅ keeps proportion without squishing */
+  border-radius: 10px; /* optional rounded edges */
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff; /* thinner line */
+  display: inline-block;
+  padding-bottom: 5px;
+  width: fit-content; /* ✅ underline only matches text width */
+}
+.contact-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  font-size: 1.2rem;
+  color: #d6d6d6; /* ✅ pastel-style icon color */
+}
+
+/* Default dark mode (links light on dark background) */
+.contact-info a {
+  color: white; /* or any light color for dark mode */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Light mode (links dark on light background) */
+body.light-mode .contact-info a {
+  color: #333; /* dark color for light background */
+}
+
+/* Contact links default (dark mode) */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #bbb; /* subtle hover */
+  text-decoration: underline;
+}
+
+/* Light mode override */
+body.light-theme .contact-info a {
+  color: #333; /* dark on light background */
+}
+
+body.light-theme .contact-info a:hover {
+  color: #53595d; /* nice blue hover */
+}
+
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    height: auto; /* ✅ remove full screen height */
+  }
+
+  .contact-image {
+    height: 300px; /* ✅ smaller image height */
+    padding: 10px; /* ✅ reduce padding on smaller screens */
+  }
+
+  .contact-image img {
+    width: 100%;   /* ✅ take full width on mobile */
+    height: 100%;
+  }
+
+  .contact-text {
+    padding: 40px 20px;
+    text-align: center; /* ✅ center text on mobile */
+  }
+}
+.thankyou-section {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 60px 8%;
+}
+
+.thankyou-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left Text */
+.thankyou-text {
+  flex: 1 1 50%;
+}
+
+.thankyou-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.thankyou-text h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #fff;
+  margin-top: 8px;
+}
+
+.thankyou-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Right Image */
+.thankyou-image {
+  flex: 1 1 40%;
+}
+
+.thankyou-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+/* Footer inside Thank You */
+.thankyou-footer {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .thankyou-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .thankyou-text {
+    flex: 1 1 100%; /* Full width for text */
+  }
+
+  .thankyou-text h1::after {
+    margin: 8px auto 0;
+  }
+
+  .thankyou-image {
+    flex: 1 1 100%; /* Full width for image */
+    max-width: 400px; /* Optional: limit maximum width */
+    margin: 20px auto 0; /* Center the image */
+  }
+
+  .thankyou-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: none; /* Remove previous max-height */
+    border-radius: 8px;
+  }
+
+  .thankyou-footer {
+    text-align: center;
+  }
+}
+/* Light Mode */
+body.light-theme {
+  background: #f5f5f5;
+  color: #111;
+}
+
+body.light-theme .navbar {
+  background: #fff;
+}
+
+body.light-theme .nav-links a {
+  color: #111;
+}
+
+body.light-theme .nav-links a:hover {
+  color: #555;
+}
+
+body.light-theme .btn {
+  background: #111;
+  color: #fff;
+}
+
+body.light-theme .btn-outline {
+  border: 1px solid #111;
+  color: #111;
+}
+
+/* Sections background */
+body.light-theme .intro-section,
+body.light-theme .about-section,
+body.light-theme .mission-section,
+body.light-theme .contact-section,
+body.light-theme .thankyou-section {
+  background: #fff;
+  color: #111;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  top: 5px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #000000; /* dark toggle color */
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
