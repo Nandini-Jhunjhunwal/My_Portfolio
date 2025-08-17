@@ -722,3 +722,71 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(22px);
 }
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hide offscreen */
+    height: 100vh;
+    width: 60%;
+    background: #222;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0; /* slide in */
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger */
+    color: #fff;
+  }
+}
+/* Hide nav links on small screens */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  transition: max-height 0.3s ease;
+}
+
+/* Hamburger menu icon */
+.menu-toggle {
+  display: none; /* hidden by default on large screens */
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* below navbar */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #9e9e9e;
+    overflow: hidden;
+    max-height: 0; /* hidden by default */
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* enough to show all links */
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger on small screens */
+  }
+}
